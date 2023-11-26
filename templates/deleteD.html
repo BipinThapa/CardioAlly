@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% block title %}Delete Doctors{% endblock %}
+{% block content %}
+<!-- entry section -->
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col customFont">
+                <form id="assessment-form" action="/deleteDoctor" method="post">
+                    <h4>
+                        <span class="design_dot"></span>
+                        Delete Doctor
+                    </h4>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="name">Doctor Name: </label>
+                            <input name="name" value="{{ data['name'] }}" class="form-control" type="text" id="name" placeholder="Enter Name" disabled>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="speciality">Speciality:</label>
+                            <select value="{{ data['speciality'] }}" id="speciality" class="form-control wide" name="speciality" disabled>
+                                <option value="Noninvasive cardiologist" {{ "selected='selected'" if data['speciality'] == 'Noninvasive cardiologist' else "" }}> Noninvasive cardiologist</option>
+                                <br>
+                                <option value="Invasive cardiologist" {{ "selected='selected'" if data['speciality'] == 'Invasive cardiologist' else "" }}> Invasive cardiologist</option>
+                                <br>
+                                <option value="Interventional cardiologist" {{ "selected='selected'" if data['speciality'] == 'Interventional cardiologist' else "" }}>Interventional cardiologist</option>
+                                <br>
+                                <option value="Cardiothoracic surgeon" {{ "selected='selected'" if data['speciality'] == 'Cardiothoracic surgeon' else "" }}>Cardiothoracic surgeon</option>
+                                <br>
+                                <option value="Vascular surgeon" {{ "selected='selected'" if data['speciality'] == 'Vascular surgeon' else "" }}>Vascular surgeon</option>
+                                <br>
+                                <option value="Electrophysiologist" {{ "selected='selected'" if data['speciality'] == 'Electrophysiologist' else "" }}>Electrophysiologist</option>
+                                <br>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="NMCnumber">NMC Number: </label>
+                            <input name="NMCnumber" value="{{ data['NMCnumber'] }}" class="form-control" type="number" id="name" placeholder="Enter NMC Number" disabled>
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                       <div class="form-group col-lg-4">
+                            <label for="contacts">Contact No: </label>
+                            <input name="contacts" value="{{ data['contacts'] }}" class="form-control" type="text" id="contacts" placeholder="Enter Contacts No" disabled>
+                        </div>
+                       <div class="form-group col-lg-4">
+                            <label for="mailId">MailId: </label>
+                            <input name="mailId" value="{{ data['mailId'] }}" class="form-control" type="email" id="mailId" placeholder="Enter MailId" disabled>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="workSpace">WorkPlace: </label>
+                            <input name="workSpace"  value="{{ data['workSpace'] }}" class="form-control" type="text" id="workSpace" placeholder="Enter Work Place" disabled>
+                        </div>
+                    </div>
+
+                    <div class="btn-box">
+                        <button type="submit" class="btn ">Delete Now</button>
+                        <label for="exang">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <h5>{{ message }}</h5>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="page" class="container">
+
+    </div>
+</section>
+<!-- end entry section -->
+{% endblock %}

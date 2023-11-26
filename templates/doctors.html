@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+{% block title %}Doctors List{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dataTables.bootstrap.css') }}">
+    <div class="content-wrapper">
+        <div class="container">
+            <section class="content-header">
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </section>
+            <section class="content">
+                <div class="box box-primary">
+                    <div class="box-header">
+                     <p class="font-weight-bold">Doctor List:</p>
+                    </div>
+
+                    <div class="box-body">
+                        <table id="dataphone" class="table table-bordered table-striped">
+                            <thead align="center">
+                            <tr>
+                                <th>Name</th>
+                                <th>Speciality</th>
+                                <th>NMC Number</th>
+                                <th>contacts</th>
+                                <th>Mail ID</th>
+                                <th>Work Space</th>
+                                <th><a href="{{ url_for('addDoctors') }}">
+                            <center>
+                                <button type="button" class="btn btn-primary btn-flat float-md-right">
+                                    <span class="glyphicon glyphicon-plus"></span> Add Doctor
+                                </button>
+                            </center>
+                        </a></th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% if data|length == 0 %}
+                                <tr>
+                                    <td>No Data</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    {% for i in data %}
+                                        <td>{{ i['name'] }}</td>
+                                        <td>{{ i['speciality'] }}</td>
+                                        <td>{{ i['NMCnumber'] }}</td>
+                                        <td>{{ i['contacts'] }}</td>
+                                        <td>{{ i['mailId'] }}</td>
+                                        <td>{{ i['workSpace'] }}</td>
+                                        <td align="center">
+                                            <a href="/updateD/{{ i['id'] }}">
+                                                <button type="button" class="btn btn-sm btn-warning btn-flat"
+                                                        title="Update"><span
+                                                        class="glyphicon glyphicon-pencil">Update</span></button>
+                                            </a>
+                                            <a href="/deleteD/{{ i['id'] }}">
+                                                <button type="button" class="btn btn-sm btn-danger btn-flat"
+                                                        title="Delete"><span
+                                                        class="glyphicon glyphicon-remove">Delete</span></button>
+                                            </a>
+                                        </td>
+                                        </tr>
+                                    {% endfor %}
+                            {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js') }}"></script>
+    <script>
+        $(function () {
+            $("#dataphone").DataTable();
+
+        });
+    </script>
+{% endblock %}

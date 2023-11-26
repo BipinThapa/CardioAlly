@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+{% block title %}Assisment{% endblock %}
+{% block content %}
+<!-- entry section -->
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col customFont">
+                <form id="assessment-form" method="post">
+                    <h4>
+                        <span class="design_dot"></span>
+                        Please Enter The Details
+                    </h4>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="Age">Patient Age: </label>
+                            <input name="age" class="form-control" type="number" id="age" placeholder="Enter age" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="sex">Gender</label>
+                            <select id="sex" class="form-control wide" name="sex" required>
+                                <option value="1"> Male</option>
+                                <br>
+                                <option value="0"> Female</option>
+                                <br>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="fbs">Is Fasting Blood Sugar More than 120 mg/dl(Fbs)?</label>
+                            <select class="form-control wide" name="fbs" id="fbs">
+                                <option value="1"> Yes</option>
+                                <option value="0"> No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="cp">Chest Pain Type(cp):</label>
+                            <select class="form-control wide" id="cp" name="cp" required>
+                                <option value="0"> Typical Angina<br>
+                                <option value="1"> Atypical Angina<br>
+                                <option value="2"> Non-Anginal Pain <br>
+                                <option value="3"> Asymptomatic<br><br><br>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="trestbps">Resting Blood Pressure
+                                (in mm Hg on admission to the hospital)(trestbps):</label>
+                            <input type="number" class="form-control " name="trestbps" id="trestbps" required>
+
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="chol">Serum Cholestoral (in mg/dl)(chol):</label>
+                            <input type="number" class="form-control" name="chol" id="chol" required>
+                        </div>
+
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="restecg">Resting Electrocardiographic Results(restecg):</label>
+                            <select class="form-control wide" name="restecg" id="restecg" required>
+                                <option value="0"> Normal<br>
+                                <option value="1"> Having ST-T Wave Abnormality</option>
+                                <br>
+                                <option value="2"> Showing Probable or Definite Left Ventricular Hypertrophy by Estes'
+                                    Criteria
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="thalach">Maximum Heart Rate Achieved(thalach):</label>
+                            <input type="number" class="form-control" id="thalach" name="thalach" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="exang">Exercise Induced Angina(exang):</label>
+                            <select class="form-control wide" name="exang" id="exang" required>
+                                <option value="1"> Yes</option>
+                                <option value="0"> No</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="oldpeak">ST Depression Induced by Exercise Relative to Rest(oldpeak):</label>
+                            <input name="oldpeak" class="form-control" id="oldpeak" type="number" placeholder="0.00"
+                                   min="0" value="0" step="0.01" pattern="^\d+(?:\.\d{1,2})?$" onblur="
+						this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                                   required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="slope">The slope of the peak exercise ST segment(slope):</label>
+                            <select class="form-control wide" name="slope" id="slope" required>
+                                <option value="0"> Upsloping</option>
+                                <option value="1"> Flat</option>
+                                <option value="2"> Downsloping</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="ca">Number of Major Vessels (0-3) Colored by Flourosopy(ca):</label>
+                            <input type="number" class="form-control" name="ca" id="ca" required>
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="thal">Thalassemia level(thal):</label>
+                            <select class="form-control wide" name="thal" id="thal">
+                                <option value="1"> Normal</option>
+                                <option value="2"> Fixed Defect</option>
+                                <option value="3"> Reversable Defect</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn-box">
+                        <button type="submit" class="btn ">Submit Now</button>
+                        <label for="exang">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <h5>{{ message }}</h5>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="page" class="container">
+
+    </div>
+</section>
+<!-- end entry section -->
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}profile{% endblock %}
+
+{% block content %}
+<div class="row d-flex justify-content-center">
+
+        <div class="col-md-7">
+
+            <div class="card p-3 py-4">
+
+                <div class="text-center">
+                    <img src="{{ url_for('static',filename='/img/user.png') }}" width="100" class="rounded-circle">
+                </div>
+
+                <div class="text-center mt-3">
+                    <span class="bg-secondary p-1 px-4 rounded text-white">id: {{userid}}</span>
+                    <h5 class="mt-2 mb-0">{{ username}}</h5>
+                    <span>{{email}}</span>
+
+                    <div class="px-4 mt-1">
+                        <p class="fonts">User Profile Descriptions list here. </p>
+                    </div>
+                     <ul class="social-list " style="float: left;">
+                        <li><i class="fa fa-facebook"></i></li>
+                        <li><i class="fa fa-dribbble"></i></li>
+                        <li><i class="fa fa-instagram"></i></li>
+                        <li><i class="fa fa-linkedin"></i></li>
+                        <li><i class="fa fa-google"></i></li>
+                    </ul>
+                    <div class="buttons">
+                        <button class="btn btn-outline-primary px-4"> <a class="nav-link" href="{{ url_for('appointment') }}"> Appointment </a></button>
+                        <button class="btn btn-primary px-4 ms-3"><a class="form-control btn btn-primary rounded px-3 " href="{{url_for('signout')}}"> SignOut </a></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}	
+	

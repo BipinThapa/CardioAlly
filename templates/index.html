@@ -1,0 +1,336 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <section class="content-header">
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </section>
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <div>
+                                        <h1>
+                                            Introduction
+                                        </h1>
+                                        <p>
+                                            Welcome to our Heart Disease Prediction System! This cutting-edge platform
+                                            is designed to help you assess your symptoms and determine potential risks
+                                            of heart disease. Early detection and preventive measures can significantly
+                                            reduce the impact of heart-related issues, making this system an essential
+                                            tool for promoting heart health. Please note that this system is not a
+                                            substitute for professional medical advice, but it can serve as a useful
+                                            initial step in understanding your risk factors.
+                                        </p>
+                                        <a href="{{ url_for('test_page') }}">
+                                            Begin Assessment
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="img-box">
+                                    <img src="{{ url_for('static',filename='/img/slider-img.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <div>
+                                        <h1>
+                                            Understanding Heart Disease
+                                        </h1>
+                                        <p>
+                                            Heart disease refers to a range of conditions that affect the heart's
+                                            structure and function. Common types include coronary artery disease, heart
+                                            failure, arrhythmias, and valvular heart diseases. Risk factors for heart
+                                            disease include age, family history, smoking, high blood pressure, high
+                                            cholesterol, obesity, sedentary lifestyle, diabetes, and stress.
+                                        </p>
+                                        <a href="{{ url_for('test_page') }}">
+                                            Begin Assessment
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="img-box">
+                                    <img src="{{ url_for('static',filename='/img/slider-img.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <div>
+                                        <h1>
+                                            How the Prediction System Works
+                                        </h1>
+                                        <p>
+                                            Our Heart Disease Prediction System is based on a series of questions
+                                            designed to assess your symptoms and risk factors. Please answer the
+                                            questions honestly and to the best of your knowledge. The system will
+                                            analyze your responses and provide you with a general indication of your
+                                            potential risk for heart disease.
+                                        </p>
+                                        <a href="{{ url_for('test_page') }}">
+                                            Begin Assessment
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="img-box">
+                                    <img src="{{ url_for('static',filename='/img/slider-img.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+        </div>
+    </section>
+    <!-- end slider section -->
+    </div>
+
+    <!-- about section -->
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    <span class="design_dot"></span>
+                    About Heart Disease
+                </h2>
+            </div>
+            <div class="col-md-7 mx-auto px-0">
+                <div class="img-box b2">
+                    <img src="{{ url_for('static',filename='/img/about-img.png') }}" alt=""/>
+                </div>
+            </div>
+            <div class="col-md-9 mx-auto px-0">
+                <div class="detail-box">
+                    <p>
+                        Heart disease is one of the leading causes of death worldwide, with millions of people affected
+                        by it every year. Early detection and prevention of heart disease are crucial in reducing the
+                        risk of death. Cardio-Ally shows great potential in predicting the risk of heart disease by
+                        analyzing various medical and lifestyle factors.
+                    </p>
+                    <a href="">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- client section -->
+    <section class="client_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center" style="margin-bottom: 0px;">
+                <h2>
+                    <span class="design_dot"></span>
+                    Healthcare Professionals
+                </h2>
+            </div>
+        </div>
+        <div class="container px-0">
+            <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="box">
+                            <div class="client_info">
+                                <div class="client_name">
+                                    <h5>
+                                        Dr. Kamal Lamsal
+                                    </h5>
+                                    <h6>
+                                        MD Internal Medicine, Fellowship in Cardiology. Consultant Cardiologist
+                                    </h6>
+                                </div>
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <p>
+                                Dr Kamal Lamsal is currently one of the best Cardiologists in Nepal. He has 20 years of
+                                experience in Medicine and Cardiology service starting at Manmohan Cardiac Centre TU
+                                Teaching Hospital, then as Consultant Cardiologist at Alka Hospital and currently at
+                                Civil Service Hospital.
+                            </p>
+                            <div style="text-align: left;">
+                                <ul>NMC Number - 3338</ul>
+                                <ul>Speciality - Consultant Cardiologist</ul>
+                                <ul>Website - <a
+                                        href="https://www.facebook.com/130404730335628/posts/drkamal-lamsal-senior-consultant-cardiologist-at-om-hospital-research-center-pvt/5665937526782293/"
+                                        target="_blank">https://www.facebook.com/130404730335628/posts/drkamal-lamsal-senior-consultant-cardiologist-at-om-hospital-research-center-pvt/5665937526782293/</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="box">
+                            <div class="client_info">
+                                <div class="client_name">
+                                    <h5>
+                                        Dr. Aditya Mahaseth
+                                    </h5>
+                                    <h6>
+                                        Doctorate of Medicine (DM) in Cardiology (BPKIHS), Short term training course in
+                                        Cardiology (AIIMS,New Delhi); Doctor of medicine (MD) in Internal Medicine(KU),
+                                        MBBS Cardiology, Internal Medicine
+                                    </h6>
+                                </div>
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <p>
+                                Life member of Cardiology Society of Nepal, Diabetes and Endocrine association of Nepal,
+                                Nepal Stroke Association and Society of Internal Medicine of Nepal.
+
+                            </p>
+                            <div style="text-align: left;">
+                                <ul>NMC Number - 11285</ul>
+                                <ul>Speciality - Cardiology, Internal Medicine</ul>
+                                <ul>Website - <a href="http://facebook.com/doctoradityamahaseth" target="_blank">http://facebook.com/doctoradityamahaseth</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="box">
+                            <div class="client_info">
+                                <div class="client_name">
+                                    <h5>
+                                        Dr. Birat Krishna Timalsena
+                                    </h5>
+                                    <h6>
+                                        MD (Internal Medicine), DM (Cardiology) Cardiologist
+                                    </h6>
+                                </div>
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <p>
+                                Dr. Birat Krishna Timilsina is Interventional Cardiologist working at Shahid Gangalal
+                                National Heart Center, Kathmandu. He completed his superspecialization degree (DM
+                                Cardiology) from National Academy of Medical Sciences (NAMS), Kathmandu, Nepal. His
+                                field of interest includes structural and coronary intervention, cardiac imaging and
+                                heart failure therapeutics.
+                            </p>
+                            <div style="text-align: left;">
+                                <ul>NMC Number - NMC Number - 16448</ul>
+                                <ul>Speciality - Interventional Cardiology</ul>
+                                <ul>Website -<a
+                                        href="https://www.linkedin.com/in/birat-krishna-timalsena-7ab3b621a/?originalSubdomain=np"
+                                        target="_blank">https://www.linkedin.com/in/birat-krishna-timalsena-7ab3b621a/?originalSubdomain=np</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="box">
+                            <div class="client_info">
+                                <div class="client_name">
+                                    <h5>
+                                        Dr Parag Karki, DM
+                                    </h5>
+                                    <h6>
+                                        DM (Cardiology)
+                                    </h6>
+                                </div>
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            </div>
+                            <p>
+                                A self-motivated and results oriented Internist and Cardiologist with over several years
+                                of experience.Currently working at Bir Hospital and Shahid Gangalal National Heart
+                                Centre. Demonstrated success in building a practice, improving staff moral and patient
+                                satisfaction. Highly skilled in all aspects of diagnostic Medicine including
+                                interventional cardiology procedures and patient care at the hospital level as well as
+                                post-operative care at home. A skilled leader who collaborates closely with physicians,
+                                administrators, and patients.
+                            </p>
+                            <div style="text-align: left;">
+                                <ul>NMC Number - NMC Number - 6611</ul>
+                                <ul>Speciality - Consultant Cardiologist</ul>
+                                <ul>Website - <a
+                                        href="https://www.linkedin.com/in/parag-karki-81aa03b6/?originalSubdomain=np"
+                                        target="_blank">https://www.linkedin.com/in/parag-karki-81aa03b6/?originalSubdomain=np</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-box">
+                    <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end client section -->
+
+    <!-- map section -->
+
+    <section class="map_section">
+
+        <div class="map">
+            <div class="container">
+                <div class="heading_container heading_center">
+                    <h2>
+                        <span class="design_dot"></span>
+                        HOSPITAL NEAR YOU
+                    </h2>
+                </div>
+            </div>
+            <div id="googleMap"></div>
+        </div>
+    </section>
+
+    <!-- end map section -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

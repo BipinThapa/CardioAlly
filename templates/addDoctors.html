@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% block title %}Add Doctors{% endblock %}
+{% block content %}
+<!-- entry section -->
+<section class="book_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col customFont">
+                <form id="assessment-form" action="/addDoctors" method="post">
+                    <h4>
+                        <span class="design_dot"></span>
+                        Please Enter The Doctor Details
+                    </h4>
+                    <div class="form-row ">
+                        <div class="form-group col-lg-4">
+                            <label for="name">Doctor Name: </label>
+                            <input name="name" class="form-control" type="text" id="name" placeholder="Enter Name" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="speciality">Speciality:</label>
+                            <select id="speciality" class="form-control wide" name="speciality">
+                                <option value="Noninvasive cardiologist"> Noninvasive cardiologist</option>
+                                <br>
+                                <option value="Invasive cardiologist"> Invasive cardiologist</option>
+                                <br>
+                                <option value="Interventional cardiologist">Interventional cardiologist</option>
+                                <br>
+                                <option value="Cardiothoracic surgeon">Cardiothoracic surgeon</option>
+                                <br>
+                                <option value="Vascular surgeon">Vascular surgeon</option>
+                                <br>
+                                <option value="Electrophysiologist">Electrophysiologist</option>
+                                <br>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="NMCnumber">NMC Number: </label>
+                            <input name="NMCnumber" class="form-control" type="number" id="name" placeholder="Enter NMC Number">
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                       <div class="form-group col-lg-4">
+                            <label for="contacts">Contact No: </label>
+                            <input name="contacts" class="form-control" type="text" id="contacts" placeholder="Enter Contacts No" >
+                        </div>
+                       <div class="form-group col-lg-4">
+                            <label for="mailId">MailId: </label>
+                            <input name="mailId" class="form-control" type="email" id="mailId" placeholder="Enter MailId" required>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="workSpace">WorkPlace: </label>
+                            <input name="workSpace" class="form-control" type="text" id="workSpace" placeholder="Enter Work Place">
+                        </div>
+                    </div>
+
+                    <div class="btn-box">
+                        <button type="submit" class="btn ">Submit Now</button>
+                        <label for="exang">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <h5>{{ message }}</h5>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="page" class="container">
+
+    </div>
+</section>
+<!-- end entry section -->
+{% endblock %}
